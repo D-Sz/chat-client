@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'poor_storyregular';
+    src: url('../webfonts/poorstory-regular-webfont.woff2') format('woff2'),
+         url('../webfonts/poorstory-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    margin: 0;
+    background-color: blanchedalmond;
+    font-family: 'poor_storyregular';
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background-color: azure;
+    height: 80vh;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+input {
+    border: none;
+    border-bottom: 2px gray solid;
+    background-color: transparent;
+    font-family: poor_storyregular;
+    font-size: 20px;
+}
+input:focus {
+    outline: none;
+    border-color: salmon;
+}
+
+input:required:invalid, input:focus:invalid {
+    /* insert your own styles for invalid form input */
+    border-color: red;
+    border-width: 2px ;
+  }
+
+  .msg {
+    display: none;
+    position: absolute;
+    top: -28px;
+    background: white;
+    padding: 3px 4px;
+    white-space: nowrap;
+    border-radius: 10px;
+  }
+
+  .msg i {
+      margin-right: 5px;
+  }
+
+  .validation.msg  {
+    color: red;
+    border: 1px red solid;
+  }
+
+  .hint.msg {
+      right: 0;
+      color: blue;
+      border: 1px blue solid;
+  }
+
+  input:required:invalid + .validation.msg {
+    display: block;
+}
+
+button {
+    background: none;
+    border: 1px solid gray;
+    border-radius: 4px;
+    min-width: 80px;
+    line-height: 20px;
+    font-family: poor_storyregular;
+    font-size: 20px;
+}
+
+button:disabled {
+    color: darkgray;
+}
+
+button:disabled:hover + .hint.msg {
+    display: block;
+}
+
+button i {
+    vertical-align: bottom;
+}
+
+button:focus {
+    outline:none;
+}
+
+#console {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+#console > div {
+
+   
+    display: flex;
+    justify-content: space-around;
+}
+
+#console > div > div {
+    position: relative;
+}

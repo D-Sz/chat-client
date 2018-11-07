@@ -8,6 +8,7 @@
     <meta name="description" content="chat client">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -17,11 +18,36 @@
   <![endif]-->
 
     <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
-    
+    <div class="container">
+        <h1><i class="far fa-comments"></i></h1>
+
+        <div id="feed">
+
+        </div>
+        <div id="console">
+            <div>
+                <div>
+                    <input id="user" type="text" placeholder="user nickname" required value="" />
+                    <span class="validation msg"><i class="fas fa-exclamation-circle"></i>user name can't be blank!</span>
+                </div>
+                <div>
+                    <input id="msg" type="text" placeholder="type your message" />
+                </div>
+                <div>
+                    <button disabled>
+                        send
+                        <i class="fab fa-telegram-plane"></i>
+                    </button>
+                    <span class="hint msg"><i class="far fa-hand-point-left"></i>type a message!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/store.js"></script>
     <script src="js/main.js"></script>
 
-    
+
 </body>
 
 </html>
