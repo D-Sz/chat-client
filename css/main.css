@@ -6,6 +6,9 @@
     font-style: normal;
 
 }
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -25,6 +28,38 @@ h1 {
     text-align: center;
     margin: 0;
     padding: 20px;
+    background: azure;
+    position: relative;
+    z-index: 99;
+}
+
+#feed {
+    padding: 10px;
+    position: absolute;
+    bottom: 50px;
+    font-size: 18px;
+    width:100%;
+}
+
+#feed .message {
+    float: left;
+    width:100%
+}
+
+#feed .message::after {
+    content: "";
+    clear: both;
+}
+
+
+#feed .message i {
+    color:darkgray ;
+}
+
+#feed .message.local {
+    text-align: right;
+    padding-right: 20px;
+    float:rigth;
 }
 
 input {
@@ -36,12 +71,12 @@ input {
 }
 input:focus {
     outline: none;
-    border-color: salmon;
+    border-color: lightblue;
 }
 
 input:required:invalid, input:focus:invalid {
     /* insert your own styles for invalid form input */
-    border-color: red;
+    border-color: salmon;
     border-width: 2px ;
   }
 
@@ -60,8 +95,8 @@ input:required:invalid, input:focus:invalid {
   }
 
   .validation.msg  {
-    color: red;
-    border: 1px red solid;
+    color: salmon;
+    border: 1px salmon solid;
   }
 
   .hint.msg {
