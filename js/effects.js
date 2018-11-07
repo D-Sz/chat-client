@@ -9,7 +9,7 @@ class Effects {
             store.subscribe(sub.scope, sub.effect.bind(this))
         })
 
-        var socket = io('https://185.13.90.140:8081/');
+        var socket = io('http://185.13.90.140:8081/');
         socket.on('connect', function (e) {
                 console.log(e)
          });
