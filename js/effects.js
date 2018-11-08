@@ -24,7 +24,9 @@ class Effects {
     }
 
     renderMsg(data) {
-        document.querySelector('#feed').insertAdjacentHTML('beforeend', appTemplates.message(data[data.length - 1]))
+        //document.querySelector('#feed').insertAdjacentHTML('beforeend', appTemplates.message(data[data.length - 1]));
+        document.querySelector('#feed').innerHTML = appTemplates.list(data) ;
+        document.querySelector('#feed div:last-child').scrollIntoView();
     }
 
     sendMsg(data){

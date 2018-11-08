@@ -18,7 +18,11 @@ class Store {
             case 'send': {
                 this.state = {
                     ...this.state,
-                    messages: [].concat(this.state.messages, { type: 'local', message: payload.message, user: this.state.username })
+                    messages: [].concat(this.state.messages, { 
+                        type: 'local', 
+                        message: payload.message, 
+                        user: this.state.username
+                    })
                 }
                 break;
             }
@@ -31,13 +35,18 @@ class Store {
             }
             case 'set-user': {
                 this.state = {
-                    ...this.state,
+                    messages: this.state.messages.map((item)=>{
+                        return {
+                            ...item,
+                            notCurrentUser: true
+                        }
+                    }) ,
                     username: payload
                 }
                 break;
             }
         }
-        //console.info('state', this.state)
+
         this.emit();
     }
 

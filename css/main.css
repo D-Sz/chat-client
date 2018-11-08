@@ -26,7 +26,7 @@ body {
 }
 
 h1 {
-    height: 90px;
+    height: 94px;
     text-align: center;
     margin: 0;
     background-image: linear-gradient(to bottom,azure 85%, transparent 100%);
@@ -44,6 +44,8 @@ h1 i {
     bottom: 50px;
     font-size: 18px;
     width:100%;
+    overflow: auto;
+    max-height: calc(80vh - 50px);
 }
 
 #feed .message {
