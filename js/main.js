@@ -31,19 +31,9 @@ var app = {
             this.sendMessage();
         })
 
-        // test
-        // this.store.subscribe('',(state)=>{ console.log( 'full',state )});
-        // this.store.subscribe('username',(state)=>{ console.log( 'username',state )});
-        // this.store.subscribe('messages',(state)=>{ console.log( 'messages',state )});
-
     },
     sendMessage() {
         this.store.action('send', { message: this.controls.msgInput.value } );
-
-        // let data = { type: 'local', message: this.controls.msgInput.value, user: 'bot' };
-        // document.querySelector('#feed').insertAdjacentHTML('beforeend', appTemplates.message(data))
-        // data.type = 'remote';
-        // document.querySelector('#feed').insertAdjacentHTML('beforeend', appTemplates.message(data))
 
         this.controls.msgInput.value = '';
         this.sendButtonEnable();

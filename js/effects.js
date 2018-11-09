@@ -1,5 +1,4 @@
 class Effects {
-
     constructor(store) {
         this.subscriptions = [
             { scope: 'messages', effect: this.renderMsg },
@@ -24,11 +23,9 @@ class Effects {
                 app.store.action('set-network-state', 'connecting' );
             });
             this.socket.on('message', function (data) {
-                console.log(data);
                 app.store.action('receive', data);
             });
             this.socket.on('disconnect', function () {
-                console.log(e)
                 app.store.action('set-network-state', 'disconnected' );
             });
 
@@ -37,7 +34,6 @@ class Effects {
     }
 
     renderMsg(data) {
-        //document.querySelector('#feed').insertAdjacentHTML('beforeend', appTemplates.message(data[data.length - 1]));
         document.querySelector('#feed').innerHTML = appTemplates.list(data);
         document.querySelector('#feed div:last-child').scrollIntoView();
     }

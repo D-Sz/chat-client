@@ -23,7 +23,6 @@ var appTemplates = {
         return `
         ${ 
             list.map((item, index) =>  { 
-                console.info(item)
                 return this.message(item, index == list.length-1 )
             }).join("")
         }

@@ -56,6 +56,7 @@ h1 i {
     float: left;
     width:100%;
     margin: 5px 0;
+    word-wrap: break-word;
 }
 
 #feed .message::after {
@@ -269,11 +270,9 @@ button:focus {
                 animation-fill-mode:forwards; 
             }
             .message.remote.anim {
-                /* transform: translateX(36px); */
                 animation: startAnimMsg ease 200ms;
             }
             .message.local.anim {
-                /* transform: translateX(-36px); */
                 animation: startAnimMsgLocal ease 200ms;
             }
            
