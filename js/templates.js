@@ -1,4 +1,13 @@
 var appTemplates = {
+    stat: function(content) {
+        return `
+        <div class=''>
+        service status: 
+        ${content == "connecting" ? "connecting... <i class='fas fa-sync-alt'></i>" : ( content ==  "connected" ? "connected <i class='fas fa-check'></i>" : "disconnected <i class='fas fa-exclamation-circle'></i>" )}
+        </div>
+        `
+    },
+
     message: function (content) {
         return `
         <div class='message ${content.type == "local" ? "local" : ""}'>

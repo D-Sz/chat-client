@@ -2,7 +2,8 @@ class Store {
     constructor() {
         this.state = {
             username: 'demo user',
-            messages: []
+            messages: [],
+            networkState: ''
         };
         this.lastState = this.state;
         this.subscriptions = [];
@@ -42,6 +43,13 @@ class Store {
                         }
                     }) ,
                     username: payload
+                }
+                break;
+            }
+            case 'set-network-state': {
+                this.state = {
+                    ...this.state,
+                    networkState: payload
                 }
                 break;
             }
