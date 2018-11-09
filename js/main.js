@@ -15,7 +15,7 @@ var app = {
 
         this.controls.userInput.value = this.store.state.username;
 
-        this.controls.userInput.addEventListener('keyup', (event) => {
+        this.controls.userInput.addEventListener('blur', (event) => {
             this.store.action('set-user', event.target.value);
             this.sendButtonEnable();
         })

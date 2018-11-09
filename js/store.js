@@ -36,6 +36,7 @@ class Store {
             }
             case 'set-user': {
                 this.state = {
+                    ...this.state,
                     messages: this.state.messages.map((item)=>{
                         return {
                             ...item,

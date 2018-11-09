@@ -8,9 +8,9 @@ var appTemplates = {
         `
     },
 
-    message: function (content) {
+    message: function (content, last) {
         return `
-        <div class='message ${content.type == "local" ? "local" : ""}'>
+        <div class='message ${content.type == "local" ? "local" : "remote"} ${last ? "anim" : ""}'>
 
         ${content.type == "remote" ? "<i class='fas fa-robot'></i>" : ""}
         ${content.type == "remote" || (content.type == "local" && content.notCurrentUser ) ? content.user + ': ' : ""}
@@ -22,9 +22,9 @@ var appTemplates = {
     list: function (list) {
         return `
         ${ 
-            list.map((item) =>  { 
+            list.map((item, index) =>  { 
                 console.info(item)
-                return this.message(item)
+                return this.message(item, index == list.length-1 )
             }).join("")
         }
         `

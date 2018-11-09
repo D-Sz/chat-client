@@ -14,7 +14,7 @@
 
 body {
     margin: 0;
-    background-color: blanchedalmond;
+    background-color: #eee;
     font-family: 'Open Sans Condensed';
 }
 
@@ -34,6 +34,7 @@ h1 {
     background-image: linear-gradient(to bottom,azure 85%, transparent 100%);
     position: relative;
     z-index: 99;
+    color: lightblue;
 }
 
 h1 i {
@@ -46,7 +47,8 @@ h1 i {
     bottom: 84px;
     font-size: 16px;
     width:100%;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     max-height: calc(80vh - 50px);
 }
 
@@ -158,8 +160,6 @@ button:focus {
 }
 
 #console > div {
-
-   
     display: flex;
     justify-content: space-around;
 }
@@ -262,3 +262,36 @@ button:focus {
                 opacity: 1;
               }
             }
+
+            .message {
+                animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+                animation-iteration-count: 1;
+                animation-fill-mode:forwards; 
+            }
+            .message.remote.anim {
+                /* transform: translateX(36px); */
+                animation: startAnimMsg ease 200ms;
+            }
+            .message.local.anim {
+                /* transform: translateX(-36px); */
+                animation: startAnimMsgLocal ease 200ms;
+            }
+           
+
+            @keyframes startAnimMsgLocal{
+                0% {
+                    transform: translateX(-36px);
+                }
+                100% {
+                    transform: translateX(0px);
+                  }
+                }
+
+                @keyframes startAnimMsg{
+                    0% {
+                        transform: translateX(36px);
+                    }
+                    100% {
+                        transform: translateX(0px);
+                      }
+                    }
